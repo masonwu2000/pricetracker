@@ -81,7 +81,7 @@ def write_to_csv(filename, response):
             with conn.cursor() as curs:
                 curs.execute(insert_sql)
 
-        csv_file.writerow([item_title, price])
+        csv_file.writerow([item_title, price, find_discount(item_title)])
 
 
 def email_users():
